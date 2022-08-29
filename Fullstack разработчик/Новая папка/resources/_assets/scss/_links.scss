@@ -1,0 +1,101 @@
+@import "variables";
+
+a {
+  font-weight: 500;
+  color: $o_50;
+  text-decoration: none;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+
+  &:hover {
+    color: $o_70;
+  }
+
+  &:focus-visible {
+    color: $o_70;
+  }
+}
+
+a.o-w {
+  &:hover {
+    color: $w;
+  }
+
+  &:focus-visible {
+    color: $w;
+  }
+}
+
+a.w-o {
+  color: $w;
+
+  &:hover {
+    color: $o_50;
+  }
+
+  &:focus-visible {
+    color: $o_50;
+  }
+}
+
+a.d-o {
+  color: $c_90;
+
+  &:hover {
+    color: $o_50;
+  }
+
+  &:focus-visible {
+    color: $o_50;
+  }
+}
+
+a.o-d {
+  color: $o_50;
+
+  &:hover {
+    color: $c_90;
+  }
+
+  &:focus-visible {
+    color: $c_90;
+  }
+}
+
+a.o-o {
+  color: $o_50;
+
+  &:hover {
+    color: $o_70;
+  }
+
+  &:focus-visible {
+    color: $o_70;
+  }
+}
+
+a.w-w {
+  color: $w;
+
+  &:hover {
+    color: $w;
+  }
+
+  &:focus-visible {
+    color: $w;
+  }
+}
+
+a.clear {
+  &:hover {
+    color: inherit;
+  }
+}
+
+a.upper {
+  text-transform: uppercase;
+}
+
+a.under {
+  text-decoration: underline;
+}

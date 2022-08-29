@@ -1,0 +1,224 @@
+@import "variables";
+
+// --- Основные иконки ---
+span.site-icon {
+  white-space: pre;
+  color: $o_50;
+  font-weight: 600;
+  position: relative;
+  padding-left: 23px;
+}
+
+span.site-icon.light {
+  color: $w;
+}
+
+span.site-icon:before {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  left: 0;
+  top: calc(50% - 10px);
+}
+
+span.site-icon.fs {
+  padding-left: 1.1em;
+}
+
+span.site-icon.fs:before {
+  content: '';
+  position: absolute;
+  width: 1em;
+  height: 1em;
+
+  left: 0;
+  top: calc(50%);
+
+  transform: translate(0, -50%);
+}
+
+span.site-icon.light:before {
+  background-image: $icon-light;
+}
+
+span.site-icon.dark:before {
+  background-image: $icon-dark;
+}
+
+span.site-icon.collider:before {
+  background-image: $icon-collider;
+}
+
+//--- Дополнительные иконки ---
+i.fa.site-icon {
+  width: 1em;
+  height: 1em;
+
+  vertical-align: middle;
+  background-repeat: no-repeat;
+}
+
+i.fa.site-icon.coin {
+  background-image: $icon-coin;
+}
+
+i.fa.site-icon.exp {
+  background-image: $icon-exp;
+}
+
+i.fa.site-icon.vip {
+  background-image: $icon-light;
+}
+
+// --- Монеты ---
+.animated-coin {
+  display: flex;
+  align-items: center;
+
+  white-space: nowrap;
+
+  &__count {
+    padding-right: 6px;
+  }
+
+  &__icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+
+    width: 1em;
+    height: 1em;
+  }
+
+  &__background {
+    position: absolute;
+
+    width: 1em;
+    height: 1em;
+
+    &::after, &::before {
+      content: '';
+
+      position: absolute;
+
+      width: 1em;
+      height: 1em;
+
+      border-radius: 50%;
+      background: $gr_20;
+      opacity: 0;
+
+      @media (min-width: 900px) {
+        animation: animated-coin__pulsation 2s linear infinite;
+      }
+    }
+
+    &::after {
+      animation-delay: 1s;
+    }
+
+    @keyframes animated-coin__pulsation {
+      0% {
+        transform: scale(0);
+        opacity: 1;
+      }
+      100% {
+        transform: scale(1);
+        opacity: 0;
+      }
+    }
+  }
+
+  &__central-ion {
+    position: absolute;
+
+    width: 0.4em;
+    height: 0.4em;
+
+    background: url("/assets/blade/img/_layouts/_prototype/icons/ion.svg");
+    border-radius: 50%;
+    border: 1px solid $c_90;
+
+    @media (min-width: 900px) {
+      animation: animated-coin__rotation-out 1s linear infinite;
+    }
+  }
+
+  &__ions {
+    position: absolute;
+
+    width: 0.5em;
+    height: 0.5em;
+
+    border-radius: 50%;
+
+    @media (min-width: 900px) {
+      animation: animated-coin__rotation 1.2s linear infinite;
+    }
+
+    &-second {
+      @media (min-width: 900px) {
+        animation: animated-coin__rotation 1s linear infinite;
+      }
+
+      &:after, &:before {
+        transform: translate(120%, -130%) !important;
+      }
+
+      &:before {
+        transform: translate(-110%, 350%) !important;
+      }
+    }
+
+    &:after, &:before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+
+      //noinspection CssInvalidFunction
+      width: 0.2em;
+      //noinspection CssInvalidFunction
+      height: 0.2em;
+
+      background: $o_50;
+      border: 1px solid $c_90;
+      transform: translate(-115%, 50%);
+      border-radius: 50%;
+    }
+
+    &:before {
+      left: auto;
+      right: 0;
+
+      //noinspection CssInvalidFunction
+      width: 0.15em;
+      //noinspection CssInvalidFunction
+      height: 0.15em;
+
+      background: $w;
+      transform: translate(160%, 160%);
+    }
+
+    @keyframes animated-coin__rotation {
+      0% {
+        transform: rotate(0deg)
+      }
+      100% {
+        transform: rotate(360deg)
+      }
+    }
+
+    @keyframes animated-coin__rotation-out {
+      0% {
+        transform: rotate(360deg)
+      }
+      100% {
+        transform: rotate(0deg)
+      }
+    }
+  }
+}

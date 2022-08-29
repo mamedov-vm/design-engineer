@@ -1,0 +1,72 @@
+@import "resources/_assets/scss/variables";
+
+html {
+  scroll-behavior: smooth;
+}
+
+html, body {
+
+}
+
+body {
+
+  &.overflow-alert {
+    overflow: hidden;
+  }
+
+  &.overflow-modal {
+    overflow: hidden;
+  }
+
+  &.overflow-mobile {
+    overflow: hidden;
+  }
+}
+
+.body {
+  position: relative;
+
+  min-height: 100vh;
+  min-width: calc(100vw - 16px);
+
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  user-select: none;
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    position: relative;
+
+    min-height: 100vh;
+
+    //noinspection CssOverwrittenProperties
+    overflow-y: scroll;
+    //noinspection CssInvalidPropertyValue,CssOverwrittenProperties
+    overflow-y: overlay;
+  }
+}
+
+.main {
+  flex: 1;
+  display: flex;
+
+  padding-top: 82px;
+}
+
+.sidebar {
+  &-wrapper {
+    width: 250px;
+    height: 100%;
+  }
+
+  &-block {
+    background-color: $w;
+    border-radius: 6px;
+    border: 0.5px solid $gr_40;
+
+    padding: 5px;
+  }
+}
