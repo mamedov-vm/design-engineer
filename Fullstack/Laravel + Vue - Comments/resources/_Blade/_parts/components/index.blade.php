@@ -1,9 +1,0 @@
-<div>
-	 <c-btn-to-top/>
-</div>
-<div>
-	 <c-notes/>
-</div>
-<div>
-	 <c-tooltip/>
-</div>
